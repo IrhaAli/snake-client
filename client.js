@@ -7,6 +7,12 @@ const connect = function () {
     port: '50541'
   });
 
+  conn.on('connect', () => { console.log('Successfully connected to game server'); })
+
+  conn.on("connect", () => {
+    conn.write(`Name: ${Math.random().toString(36).slice(2, 5)}`);
+  });
+
   // interpret incoming data as text
   conn.setEncoding("utf8");
 
