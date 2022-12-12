@@ -1,4 +1,5 @@
-const {up, down, left, right, messageKey} = require('./constants');
+const { up, down, left, right, messageKey, messageLength } = require('./constants');
+const readline = require('readline');
 let conn;
 
 const setupInput = function (connection) {
@@ -24,8 +25,14 @@ const handleUserInput = function (key) {
   } else if (key === right) {
     conn.write('Move: right');
   } else if (key === messageKey) {
-    conn.write('Say: ' + key);
+    const rl = readline.createInterface({
+      input: process.stdin,
+      output: process.stdout
+    });
+    rl.question(`What message would you like to send (can only be ${messageLength} characters)?`, (message) => {
+      conn.write('Say: ' + message.slice(0, messageLength));
+    });
   }
 };
 
-module.exports = { setupInput }
+module.exports = { setupInput };
