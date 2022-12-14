@@ -18,6 +18,7 @@ const connect = function() {
   conn.on("connect", () => {
     conn.write(`Name: ${Math.random().toString(36).slice(2, 5)}`);
   });
+  // Upon connection send a message to all the other players. Fill in the code here.
 
 
   // Events when data is received. This is when you're not moving. It doesn't have anything to do with connect. THIS IS FOR THE CASE OF IDLING

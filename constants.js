@@ -4,7 +4,7 @@ const up = 'w';
 const down = 's';
 const left = 'a';
 const right = 'd';
-const messageKey = 'x';
-const messageLength = 3;
+const messageKey = '\u000d';
+const sendMessage = '\u0018';
 
-module.exports = { IP, PORT, up, down, left, right, messageKey, messageLength };
+module.exports = { IP, PORT, up, down, left, right, messageKey, sendMessage};
