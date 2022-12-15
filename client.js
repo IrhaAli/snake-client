@@ -1,14 +1,15 @@
 const net = require("net");
 const { IP, PORT } = require("./constants");
 
-// establishes a connection with the game server
+/** Establishes a connection with the game server
+ * @returns {object} returns a connection to the game server.
+ */
 const connect = function() {
   // establishing a connection with the game server
   const conn = net.createConnection({
     host: IP,
     port: PORT
   });
-  // interpret incoming data as text
   conn.setEncoding("utf8");
 
   // Events as soon as the connection is established
@@ -18,10 +19,8 @@ const connect = function() {
   conn.on("connect", () => {
     conn.write(`Name: ${Math.random().toString(36).slice(2, 5)}`);
   });
-  // Upon connection send a message to all the other players. Fill in the code here.
 
-
-  // Events when data is received. This is when you're not moving. It doesn't have anything to do with connect. THIS IS FOR THE CASE OF IDLING
+  // Send message to player after death to explain the COD.
   conn.on("data", function(data) {
     console.log(data);
   });
