@@ -20,4 +20,5 @@ Before you can run this client, you will need to be running the server side whic
 - Run the development snake client using the `node play.js` command.
 - You can see the rules of the game [here](https://en.wikipedia.org/wiki/Snake_(video_game_genre)).
 - To play the game you can more up, down, left, right by pressing w, s, a, d, respectively.
-- To send a message first press ctrl + m then type your message. Once you're ready to send the message press ctrl + x.
+- To send any of the following formulated messages 'hello', 'goodbye', 'you idiot', 'out of my way chump' press h, g, i, o, respectively.
+- To send a custom message first press ctrl + a then type your message. Once you're ready to send the message press ctrl + x. `BEWARE`: you will be idling while typing the message so type and send it fast to avoid death.
