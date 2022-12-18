@@ -20,7 +20,7 @@ const connect = function() {
     conn.write(`Name: ${Math.random().toString(36).slice(2, 5)}`);
   });
 
-  // Send message to player after death to explain the COD.
+  // Consoles any information server sends.
   conn.on("data", function(data) {
     console.log(data);
   });
