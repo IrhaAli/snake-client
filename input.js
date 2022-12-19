@@ -10,7 +10,7 @@ let message = '';
  * @param {object} takes in the connection of a player to the game server.
  * @returns {stdin} the stdin object.
  */
-const setupInput = function (connection) {
+const setupInput = function(connection) {
   conn = connection;
   stdin.setRawMode(true);
   stdin.setEncoding("utf8");
@@ -22,7 +22,7 @@ const setupInput = function (connection) {
 /** Handles users inputs (spefically, ctrl + c, up (w), down (s), left (a), right (d)) and sends it to the game server.
  * @param {string} data the user inputs.
 */
-const handleUserInput = function (key) {
+const handleUserInput = function(key) {
   if ((key !== messageKey) && (!messageKeyPressed)) {
     if (key === '\u0003') {
       process.exit();
