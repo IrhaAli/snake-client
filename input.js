@@ -1,4 +1,4 @@
-const { up, down, left, right, cannedMessages, messageKey, sendMessage } = require('./constants');
+const { cannedMessages, messageKey, sendMessage, moves } = require('./constants');
 // Set up the global variables.
 let conn;
 const stdin = process.stdin;
@@ -26,14 +26,8 @@ const handleUserInput = function(key) {
   if ((key !== messageKey) && (!messageKeyPressed)) {
     if (key === '\u0003') {
       process.exit();
-    } else if (key === up) {
-      conn.write('Move: up');
-    } else if (key === down) {
-      conn.write('Move: down');
-    } else if (key === left) {
-      conn.write('Move: left');
-    } else if (key === right) {
-      conn.write('Move: right');
+    } else if (moves[key] !== undefined) {
+      conn.write(`Move: ${moves[key]}`);
     } else if (cannedMessages[key] !== undefined) {
       conn.write('Say: ' + cannedMessages[key]);
     }
